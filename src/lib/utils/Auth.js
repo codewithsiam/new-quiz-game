@@ -16,7 +16,7 @@ function removeAccessToken() {
 const fakeAuthProvider = {
     hasAccess: getAccessToken(),
     signin(accessToken, callback) {
-        setAccessToken(accessToken);
+        setAccessToken("fakeAccessToken");
         setTimeout(() => {
             callback();
         }, 100);

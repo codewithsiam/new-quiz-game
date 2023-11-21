@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { ButtonContainer, GameCard, InnerText, QuestionLength, GridContainer } from '../../shared/AppStyles/AppStyles';
+import { ButtonContainer, GameCard, InnerText, QuestionLength, GridContainer } from '@/components/shared/AppStyles/AppStyles';
 import { Button, PrimaryButton } from '@/components/base/FormButtons/FormButtons';
 import { Heading2 } from '@/components/base/Typography/Typography';
+import { Paragraph } from '@/components/base/Typography/Typography';
+import TrophyLogo from '/trophy-logo.svg';
 
 const questions = [
   {
@@ -67,9 +69,10 @@ const Game = () => {
       {showScore ? (
         <>
           <Heading2>Game Over!</Heading2>
-          <p style={{ fontSize: '1rem' }}>
+          <img src={TrophyLogo} style={{ height: '80px', width: '80px' , margin: '5px auto', display: 'block'}} alt="" />
+          <Paragraph style={{ fontSize: '1.3rem', textAlign: 'center' }}>
             Your score: {score}/{questions.length}
-          </p>
+          </Paragraph>
         </>
       ) : (
         <>
@@ -81,7 +84,11 @@ const Game = () => {
           <Heading2>{questions[currentQuestion].question}</Heading2>
           <GridContainer>
             {questions[currentQuestion].options.map((option, index) => (
-              <PrimaryButton key={index} $selected={chosenAnswers[currentQuestion] === index} onClick={() => handleAnswer(index)}>
+              <PrimaryButton
+                key={index}
+                $selected={chosenAnswers[currentQuestion] === index}
+                onClick={() => handleAnswer(index)}
+              >
                 {option}
               </PrimaryButton>
             ))}

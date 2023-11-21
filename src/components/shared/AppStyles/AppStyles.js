@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PageContainer = styled.div`
-  background-color: #f0f0f0;
+ 
   height: 100vh; 
 `;
 
@@ -22,13 +22,12 @@ export const GridContainer = styled.div`
 `;
 
 export const GameCard = styled.div`
+ background-color: ${({theme}) => theme.secondaryBgColor};
   width: 100%;
   max-width: 600px;
   margin-top: 20px;
   padding: 50px;
-  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const QuestionLength = styled.div`

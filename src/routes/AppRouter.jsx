@@ -5,7 +5,7 @@ import LoginPage from '@/pages/LoginPage/LoginPage';
 import HomePage from '@/pages/HomePage/HomePage';
 import React from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from '@/routes/PrivateRoute';
 
 function AppRouter() {
   const { user } = useAuth();
